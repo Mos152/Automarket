@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Contacto</title>
+
+	<!-- meta viewport -->
+	<meta content="widht=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" name="viewport">
+
+	<!-- Bootstrap 4 CDN -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+
+	<!-- Archivos locales de CSS -->
+	<link rel="stylesheet" href="css/main.css">
+
+	<!-- Slippry slider -->
+	<link rel="stylesheet" href="css/slippry.css">
+
+	<!-- Font awesome CDN -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<body>
+
+	<!-- barra de navegación -->
+	<nav id="nav">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-xl-2">
+					<a href="" class="logo">
+						<img src="images/logo.png" >
+					</a>
+				</div>
+				<div class="col-xl-10">
+					<ul>
+						<li><a href="index.html">Inicio</a></li>
+						<li class="link-active"><a href="contacto.html">Contacto</a></li>
+						<li><a href="index.html#nosotros">Nosotros</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</nav>
+	<!--  -->
+	
+	<!--contacto-->
+
+	<div id="contacto">
+		<ul>
+			<li class='map'></li>
+			<li class='formulario'>
+				<h3>Dejanos un mensaje</h3>
+				<form id="formulario">
+					<div id="grupo_nombre">
+						<input type='name' name='nombre' placeholder="Tu nombre">
+					</div>
+						
+					<div id='grupo_email'> 
+						<input type='email' name='email' placeholder="Tu email">
+					</div>	
+					
+					<div id='grupo_tel'>
+						<input type='tel' name='tel' placeholder="Tu telefono">
+					</div>
+					
+					<div id='grupo_mensaje'>
+						<textarea name='mensaje' placeholder="Tu mensaje..."></textarea>
+					</div>	
+				
+					<button type='submit' name='submit'>Enviar Mensaje</button>	
+				<form>
+			</li>
+		</ul>
+	</div>
+
+	<!-- footer -->
+	<footer >
+		<div class="container">
+			<div class="row">
+				<div class="col-xl-8">
+					<p class="white"><strong>Mapa del sitio</strong></p>
+					<ul>
+						<li class="white small">Inicio</li>
+						<li class="white small">Nosotros</li>
+						<li class="white small">Contacto</li>
+						<hr>
+						<li class="white small">Contrato</li>
+						<li class="white small">Servicios</li>
+						<li class="white small">Facturación</li>
+						<li class="white small">Términos y condiciones</li>
+					</ul>
+				</div>
+				<div class="col-xl-4">
+					<p class="white"><strong>Contacto</strong></p>
+					<ul class="white">
+						<li class="small">+54 1234 5678</li>
+						<li class="small">mail@mail.com</li>
+						<li class="small">John Doe / <i>Fundador</i></li>
+					</ul>
+					<br>
+					<p class="white"><strong>Redes sociales</strong></p>
+					<ul class="social-footer">
+						<li><i class="fa fa-facebook"></i></li>
+						<li><i class="fa fa-twitter"></i></li>
+						<li><i class="fa fa-youtube"></i></li>
+						<li><i class="fa fa-tumblr"></i></li>
+					</ul>
+				</div>
+				
+			</div>
+		</div>
+	</footer>
+	<div class="copy">
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					<p class="small">
+						&copy; 2021 Todos los derechos reservados por <a href="">Automarket</a>
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!--  -->
+
+
+
+
+	<!-- Bootstrap 4 CDN js -->
+	<script
+			  src="https://code.jquery.com/jquery-3.2.1.min.js"
+			  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+			  crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+	<script src="js/slippry.min.js"></script>
+	<script src='js/formulario.js'></script>
+	<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+	<script>
+		$(document).ready(function(){
+
+		
+			$(window).scroll(function(){
+				var scroll = $(window).scrollTop();
+				if (scroll > ($('#contacto').offset().top)) {
+					$('#nav').addClass('nav-overlay');
+				} else {
+					$('#nav').removeClass('nav-overlay');
+				}
+			});
+			$(window).scroll();
+
+		
+		});
+	</script>
+</body>
+</html>

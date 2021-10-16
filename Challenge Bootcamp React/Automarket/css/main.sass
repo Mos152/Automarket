@@ -1,0 +1,335 @@
+//variables de colores
+$base: #060a0f
+$sec: #494949
+$outline: #ff6500
+$text: transparentize($sec, .5)
+
+//Estilos generales
+a
+	margin: 0px
+	padding: 0px
+	@extend .tSlow
+	&:hover
+		color: $outline
+h1,h2,h3,h4,h5,h6
+	color: $base
+p
+	color: $sec
+.tSlow
+	-webkit-transform: all 0.5s ease-in-out
+	-o-transition: all 0.5s ease-in-out
+	transition: all 0.5s ease-in-out
+.pad_100
+	padding: 100px 0px
+.center
+	text-align: center
+	margin: 0px auto
+.main-title
+	font-size: 60px
+	font-weight: bold
+	color: $base
+
+//imagenes del sitio
+
+.rounded-circle
+	width: 250px
+	height: 250px
+	-webkit-clip-path: polygon(50% 0%,100% 50%,50% 100%,0% 50%)
+	-o-clip-path: polygon(50% 0%,100% 50%,50% 100%,0% 50%)
+	clip-path: polygon(50% 0%,100% 50%,50% 100%,0% 50%)
+	@extend .tSlow
+	&:hover
+		clip-path: polygon(100% 0%,100% 100%,0% 100%,0% 0%)
+
+//Estilos de los inputs, textarea, buttons
+input,
+select,
+option,
+textarea
+	width: 100%
+	padding: 10px 15px
+	border: 1px solid $base
+	margin: 5px 0px
+	opacity: .5
+	@extend .tSlow
+	&:hover,
+	&:focus
+		opacity: 1
+		color: $base
+
+textarea
+	max-width: 100%
+	min-width: 100%
+	min-height: 150px
+	max-height: 250px
+
+button
+	background-color: transparent
+	text-transform: uppercase
+	border: 1px solid $base
+	padding: 10px 20px
+	margin: 5px 0px
+	color: $base
+	font-size: 16px
+	letter-spacing: 1px
+	cursor: pointer
+	opacity: 7
+	@extend .tSlow
+	&:hover
+		opacity: 1
+		background-color: $base
+		color: white
+
+.black
+	background-color: $base
+	opacity: 1
+	color: white
+	&:hover
+		background-color: $outline
+		border: 1px solid $outline
+//Estilos de la barra de navegacion
+nav
+	width: 100%
+	background-color: transparent
+	padding: 10px 0px
+	position: fixed
+	border-bottom: 1px solid transparent
+	z-index: 100
+	@extend .tSlow
+	//Animacion de la barra al hacer hover 
+	&:hover
+		background-color: white
+		padding: 25px 0px
+		border: 1px solid transparentize($base,.9)
+		.logo
+			img
+				width: 80%
+		ul
+			margin-top: 8px
+			li
+				a
+					color: $text
+	///////////////////////
+	.logo
+		img
+			width: 100%
+			@extend .tSlow
+	ul
+		margin: 0px
+		margin-top: 18px
+		padding: 0px
+		text-align: right
+		@extend .tSlow
+		.link-active
+			a
+				color: $base !important
+				&:after
+					width: 100%
+					background-color: $base
+					@extend .tSlow
+		li
+			display: inline-block
+			padding: 0px 10px
+			a
+				position: relative
+				text-decoration: none
+				font-size: 16px
+				text-transform: uppercase
+				color: transparentize(white,.2 )
+				@extend .tSlow
+				&:before
+					content: ''
+					position: absolute
+					width: 100%
+					background-color: transparent
+					height: 1px
+					@extend .tSlow
+				&:after
+					content: ''
+					position: absolute
+					top: 100%
+					left: 0px
+					width: 0%
+					background-color: transparent
+					height: 1px
+					@extend .tSlow
+				&:hover
+					text-decoration: none
+					color: $base
+					&:before
+						width: 0%
+						background-color: $base
+					&:after
+						width: 100%
+						background-color: $base
+
+.nav-overlay
+	background-color: white
+	border-bottom: 1px solid transparentize($base,.9)
+	padding: 25px 0px
+	.logo
+		img
+			width: 80%
+	ul
+		margin-top: 8px
+		li
+			a
+				color: $text
+//estilos del slider slippry
+
+#slider
+	backface-visibility: hidden
+	-webkit-clip-path: polygon(100% 0%, 100% 100%,50% 85%,0% 100%,0% 0%)
+	-o-clip-path: polygon(100% 0%, 100% 100%,50% 85%,0% 100%,0% 0%)
+	clip-path: polygon(100% 0%, 100% 100%,50% 85%,0% 100%,0% 0%)
+
+#slippry
+	position: relative
+	h1,h2,h3,h4,h5,h6,p,a,button,small,strong,span
+		position: absolute
+	p
+		width: 600px
+	.white_bg
+		background-color: transparentize(white,.2)
+		padding: 5px 10px
+	.left
+		left: 200px
+	.right
+		right: 200px
+	.top_250
+		top: 250px
+	.top_300
+		top: 300px
+	.top_375
+		top: 375px
+	.top_400
+		top: 400px
+
+//estilos de contacto
+
+#contacto
+	width: 100%
+	height: 100vh
+	background-color: transparent
+	ul
+		margin: 0px
+		padding: 0px
+		list-style: none
+		li
+			float: left
+			padding: 0px
+			margin: 0px
+		.map
+			width: 66.6%
+			height: 100vh
+			background-image: url('../images/maps.jpg')
+			background-position: center center
+			background-size: cover
+		.formulario
+			width: 33.3%
+			height: 100vh
+			padding: 150px 50px
+			background-color: white
+		@media only screen and (max-width: 600px)
+			.map
+				display: none !important
+			.formulario
+				width: 100%
+//validacion contacto 
+.grupo_correcto
+	border-bottom: 10px solid #5bf846
+	border-radius: 5px
+.grupo_incorrecto
+	border-bottom: 10px solid red
+	border-radius: 5px
+///estilos de los errores de validacion 
+.errores_formulario
+	color: red
+
+//estilos del footer
+footer
+	margin-top: -60px
+	width: 100%
+	background-color: $base
+	padding: 70px 0px
+
+	-webkit-clip-path: polygon(0% 15%, 50% 0%, 100% 15%, 100% 100%, 0% 100%)
+	-o-clip-path: polygon(0% 15%, 50% 0%, 100% 15%, 100% 100%, 0% 100%)
+	clip-path: polygon(0% 15%, 50% 0%, 100% 15%, 100% 100%, 0% 100%)
+	p
+		margin: 0px
+		padding: 0px
+	strong
+		color: transparentize(white, .6)
+	ul
+		padding: 0px
+		margin: 0px
+		list-style: none
+	li
+		padding: 0px
+		margin: 0px
+		color: transparentize(white, .8)
+	a
+		opacity: .5
+		color: $outline
+		@extend .tSlow
+		&:hover
+			opacity: 1
+			text-decoration: none
+	hr
+		border-radius: 10px
+		background-color: transparentize(white, .92)
+.copy
+	padding: 10px 0px
+	background-color: lighten($base, 1)
+	text-align: left
+	p, a
+		margin: 0px
+		padding: 0px
+		color: transparentize(white, .7 )
+	a
+		opacity: .5
+		color: $outline
+		@extend .tSlow
+		&:hover
+			opacity: 1
+			text-decoration: none
+.social-footer
+	margin-top: 5px
+	li
+		display: inline-block
+		position: relative
+		margin: 0px 7px
+		float: left
+		width: 30px
+		height: 30px
+		text-align: center
+		-webkit-transform: rotate(0deg)
+		-ms-transform: rotate(0deg)
+		-o-transform: rotate(0deg)
+		transform: rotate(0deg)
+		backface-visibility: hidden
+		cursor: pointer
+		@extend .tSlow
+		i
+			font-size: 22px
+			color: transparentize(white, .8)
+			-webkit-transform: rotate(0deg) translate(-3px, 3px)
+			-ms-transform: rotate(0deg) translate(-3px, 3px)
+			-o-transform: rotate(0deg) translate(-3px, 3px)
+			transform: rotate(0deg) translate(-3px, 3px)
+			backface-visibility: hidden
+			@extend .tSlow
+		&:hover
+			-webkit-transform: rotate(45deg)
+			-ms-transform: rotate(-45deg)
+			-o-transform: rotate(45deg)
+			transform: rotate(45deg)
+			background-color: white
+			backface-visibility: hidden
+			i
+				color: $base
+				-webkit-transform: rotate(-45deg) translate(-3px, 3px)
+				-ms-transform: rotate(-45deg) translate(-3px, 3px)
+				-o-transform: rotate(-45deg) translate(-3px, 3px)
+				transform: rotate(-45deg) translate(-3px, 3px)
